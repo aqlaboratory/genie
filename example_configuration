@@ -1,0 +1,7 @@
+name scope_l_128_p_5
+numEpoches 10000
+batchSize 4
+maximumNumResidues 128
+logEverySteps 1000
+checkpointEveryEpoches 10000
+learningRate 1e-4
