@@ -15,7 +15,7 @@ chmod +x scripts/install_dataset.sh
 
 ## Training
 
-To train Genie, create a directory $runs/[RUN_NAME]$ and go into the directory. Create a configuration file with name `configuration`. An example of configuration file is provided in `example_configuration` and a complete list of configurable parameters could be found in `genie/config.py`. Note that in the configuration file, `name` should match with `RUN_NAME` in order to log into the correct directory. To start training, run
+To train Genie, create a directory `runs/[RUN_NAME]` and go into the directory. Create a configuration file with name `configuration`. An example of configuration file is provided in `example_configuration` and a complete list of configurable parameters could be found in `genie/config.py`. Note that in the configuration file, `name` should match with `RUN_NAME` in order to log into the correct directory. To start training, run
 ```
 python genie/train.py -c runs/RUN_NAME/configuration -g0 &
 ```
