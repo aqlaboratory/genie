@@ -29,7 +29,7 @@ python genie/sample.py -n RUN_NAME -g0
 ```
 By default, it uses the checkpoint with the latest version and epoch. You could also specify the version and epoch by using the `-v` and `-e` flag respectively. This would sample 10 domains per sequence length between 50 and 128, with a sampling batch size of 5. The output are stored in the directory `runs/[RUN_NAME]/version_[VERSION]/samples/epoch_[EPOCH]`.
 
-We also provide the weights for our trained model, which is available under the `weights` directory, together with the corresponding configuration file. To load the model, run
+We also provide the weights for our trained model, which are available under the `weights` directory, together with the corresponding configuration file. To load the model, run
 ```
 from genie.config import Config
 from genie.diffusion.genie import Genie
