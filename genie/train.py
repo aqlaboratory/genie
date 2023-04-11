@@ -42,7 +42,8 @@ def main(args):
 
 	# trainer
 	trainer = Trainer(
-		gpus=gpus,
+		devices=gpus,
+		accelerator='gpu',
 		logger=[tb_logger, wandb_logger],
 		strategy='ddp',
 		deterministic=True,
