@@ -4,7 +4,7 @@ import glob
 import numpy as np
 
 from genie.config import Config
-from genie.diffusion.Genie import Genie
+from genie.diffusion.genie import Genie
 
 
 def get_versions(rootdir, name):
