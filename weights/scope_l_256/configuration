@@ -1,0 +1,12 @@
+name scope_l_256_p_5
+numEpoches 2000
+batchSize 4
+maximumNumResidues 256
+dataDirectory data
+datasetNames scope
+templateType v1
+numPairTransformLayers 5
+includeTriangularAttention False
+logEverySteps 1000
+checkpointEveryEpoches 1000
+learningRate 1e-4

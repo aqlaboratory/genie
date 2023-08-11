@@ -1,0 +1,13 @@
+name genie_l_256_t_1000_swissprot
+numEpoches 30
+batchSize 4
+maximumNumResidues 256
+dataDirectory data/swissprot_pdb_v4
+templateType v1
+numPairTransformLayers 5
+includeTriangularAttention False
+logEverySteps 1000
+checkpointEveryEpoches 10
+learningRate 1e-4
+numTimesteps 1000
+
