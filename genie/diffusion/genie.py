@@ -63,7 +63,7 @@ class Genie(Diffusion):
 
 		return T(rots, trans), T(rots_noise, trans_noise)
 
-	def p(self, ts, s, mask):
+	def p(self, ts, s, mask, noise_scale):
 
 		# [b, 1, 1]
 		w_noise = ((1. - self.alphas[s].to(self.device)) / self.sqrt_one_minus_alphas_cumprod[s].to(self.device)).view(-1, 1, 1)
@@ -89,7 +89,7 @@ class Genie(Diffusion):
 			trans_sigma = self.sqrt_betas[s].view(-1, 1, 1).to(self.device)
 
 			# [b, n_res, 3]
-			trans = trans_mean + trans_sigma * trans_z
+			trans = trans_mean + noise_scale * trans_sigma * trans_z
 			trans = trans * mask.unsqueeze(-1)
 
 			# [b, n_res, 3, 3]

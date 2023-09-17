@@ -13,6 +13,7 @@ setup(
             'torch',
             'scipy',
             'wandb',
+            'pandas',
             'tensorboard',
             'pytorch_lightning',
       ],

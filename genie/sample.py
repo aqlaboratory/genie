@@ -40,7 +40,7 @@ def main(args):
 				torch.ones((args.batch_size, length)),
 				torch.zeros((args.batch_size, max_n_res - length))
 			], dim=1).to(device)
-			ts = model.p_sample_loop(mask, verbose=False)[-1]
+			ts = model.p_sample_loop(mask, args.noise_scale, verbose=False)[-1]
 			for batch_sample_idx in range(ts.shape[0]):
 				sample_idx = batch_idx * args.batch_size + batch_sample_idx
 				coords = ts[batch_sample_idx].trans.detach().cpu().numpy()
@@ -59,6 +59,7 @@ if __name__ == '__main__':
 	parser.add_argument('-e', '--model_epoch', type=int, help='Epoch Genie model checkpointed')
 	parser.add_argument('--batch_size', type=int, help='Batch size', default=5)
 	parser.add_argument('--num_batches', type=int, help='Number of batches', default=2)
+	parser.add_argument('--noise_scale', type=float, help='Sampling noise scale', default=0.6)
 	args = parser.parse_args()
 
 	# run

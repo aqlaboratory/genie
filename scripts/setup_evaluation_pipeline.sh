@@ -10,8 +10,8 @@ pip install "openfold @ git+https://github.com/aqlaboratory/openfold.git"
 pip install modelcif
 
 # Set up TMscore/TMalign
-mkdir -p packages/TMscore
-cd packages/TMscore
+mkdir -p TMscore
+cd TMscore
 wget https://zhanggroup.org/TM-score/TMscore.cpp
 g++ -O3 -ffast-math -lm -o TMscore TMscore.cpp
 chmod +x TMscore

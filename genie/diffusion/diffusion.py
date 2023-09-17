@@ -53,14 +53,14 @@ class Diffusion(LightningModule, ABC):
 		raise NotImplemented
 
 	@abstractmethod
-	def p(self, ts, s, mask):
+	def p(self, ts, s, mask, noise_scale):
 		raise NotImplemented
 
 	@abstractmethod
 	def loss_fn(self, tnoise, ts, s):
 		raise NotImplemented
 
-	def p_sample_loop(self, mask, verbose=True):
+	def p_sample_loop(self, mask, noise_scale, verbose=True):
 		if not self.setup:
 			self.setup_schedule()
 			self.setup = True
@@ -68,7 +68,7 @@ class Diffusion(LightningModule, ABC):
 		ts_seq = [ts]
 		for i in tqdm(reversed(range(self.config.diffusion['n_timestep'])), desc='sampling loop time step', total=self.config.diffusion['n_timestep'], disable=not verbose):
 			s = torch.Tensor([i] * mask.shape[0]).long().to(self.device)
-			ts = self.p(ts, s, mask)
+			ts = self.p(ts, s, mask, noise_scale)
 			ts_seq.append(ts)
 		return ts_seq
 
