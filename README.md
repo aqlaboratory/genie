@@ -1,6 +1,6 @@
 # Genie: De Novo Protein Design by Equivariantly Diffusing Oriented Residue Clouds
 
-This repository provides the implementation code for our [preprint](https://arxiv.org/abs/2301.12485). Below provides an illustration of the sampling process.
+This repository provides the implementation code for our [ICML paper](https://arxiv.org/abs/2301.12485). Below provides an illustration of the sampling process.
 
 ![](https://github.com/aqlaboratory/genie/blob/main/sampling.gif)
 
